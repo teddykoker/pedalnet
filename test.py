@@ -29,7 +29,7 @@ def test(args):
     y_pred = y_pred[:, :, -x_test.shape[2] :]
 
     save("y_pred.wav", y_pred)
-    save("x_test.wav", data["x_test"])
+    save("x_test.wav", data["x_test"] * data["std"] + data["mean"])
     save("y_test.wav", data["y_test"])
 
 
