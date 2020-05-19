@@ -18,14 +18,22 @@ Ibanez TS9 Tube Screamer (all knobs at 12 o'clock).<br>
 
 ## Usage
 
-**Prepare data**:
-
+**Run effect on .wav file**:
+Must be single channel, 44.1 kHz
 ```bash
-python prepare_data.py data/in.wav data/out_ts9.wav
+# must be same data used to train
+python prepare_data.py data/in.wav data/out_ts9.wav 
+
+# specify input file and desired output file
+python predict.py my_input_guitar.wav my_output.wav 
+
+# if you trained you own model you can pass --model flag
+# with path to .ckpt
 ```
 
 **Train**:
 ```bash
+python prepare_data.py data/in.wav data/out_ts9.wav # or use your own!
 python train.py 
 python train.py --gpus "0,1"  # for multiple gpus
 python train.py -h  # help (see for other hyperparameters)
