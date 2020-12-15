@@ -5,7 +5,7 @@ from model import PedalNet
 
 
 def main(args):
-    model = PedalNet(args)
+    model = PedalNet(vars(args))
     trainer = pl.Trainer(
         max_epochs=args.max_epochs, gpus=args.gpus, row_log_interval=100
     )
