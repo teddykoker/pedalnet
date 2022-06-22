@@ -1,4 +1,4 @@
 torch==1.4.0
 pytorch_lightning==0.7.3
-numpy==1.18.1
+numpy==1.22.0
 scipy==1.4.1
